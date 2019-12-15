@@ -31,7 +31,7 @@ app.get('/login', (req, res) => {
   return res.render('login', { authed });
 });
 
-app.post('/login', bodyParser.urlencoded(), (req, res) => {
+app.post('/login', bodyParser.urlencoded({ extended: false }), (req, res) => {
   const { username, password } = req.body;
 
   if (username === 'keawade' && password === 'test123') {
