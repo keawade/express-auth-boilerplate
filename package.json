@@ -4,7 +4,13 @@
   "description": "A boilerplate for an express server with auth in typescript",
   "main": "index.ts",
   "scripts": {
-    "start": "ts-node src/index.ts"
+    "start": "ts-node src/index.ts",
+    "check": "npm run check:prettier && npm run check:eslint",
+    "check:eslint": "eslint --ext .ts --ext .js src/**",
+    "check:prettier": "prettier --check src/**/*.ts src/**/*.js",
+    "fix": "npm run fix:prettier && npm run fix:eslint",
+    "fix:eslint": "eslint --ext .ts --ext .js --fix src/**",
+    "fix:prettier": "prettier --write src/**/*.ts src/**/*.js"
   },
   "author": "Keith Wade",
   "license": "MIT",
@@ -13,6 +19,12 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.2",
+    "@typescript-eslint/eslint-plugin": "^2.11.0",
+    "@typescript-eslint/parser": "^2.11.0",
+    "eslint": "^6.7.2",
+    "eslint-config-prettier": "^6.7.0",
+    "husky": "^3.1.0",
+    "prettier": "^1.19.1",
     "ts-node": "^8.5.4",
     "typescript": "^3.7.3"
   }
