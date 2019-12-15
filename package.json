@@ -6,19 +6,21 @@
   "scripts": {
     "start": "ts-node src/index.ts",
     "check": "npm run check:prettier && npm run check:eslint",
-    "check:eslint": "eslint --ext .ts --ext .js src/**",
+    "check:eslint": "eslint src/**/*.ts",
     "check:prettier": "prettier --check src/**/*.ts src/**/*.js",
     "fix": "npm run fix:prettier && npm run fix:eslint",
-    "fix:eslint": "eslint --ext .ts --ext .js --fix src/**",
+    "fix:eslint": "eslint --fix src/**/*.ts",
     "fix:prettier": "prettier --write src/**/*.ts src/**/*.js"
   },
   "author": "Keith Wade",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pug": "^2.0.4"
   },
   "devDependencies": {
     "@types/express": "^4.17.2",
+    "@types/pug": "^2.0.4",
     "@typescript-eslint/eslint-plugin": "^2.11.0",
     "@typescript-eslint/parser": "^2.11.0",
     "eslint": "^6.7.2",

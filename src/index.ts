@@ -4,6 +4,9 @@ const PORT = 3000;
 
 const app = express();
 
-app.get('/', (req, res) => res.send('This is only a test.'));
+app.set('views', 'src/views');
+app.set('view engine', 'pug');
+
+app.get('/', (req, res) => res.render('home'));
 
 app.listen(PORT, () => console.log(`App listening on port ${PORT}`));
