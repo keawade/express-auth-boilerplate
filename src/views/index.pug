@@ -2,4 +2,9 @@ html
   head
     title Express Auth Boilerplate
   body
+    nav
+      if authed
+        a(href='/?authed=false') Log Out
+      else
+        a(href='/?authed=true') Log In
     block content
