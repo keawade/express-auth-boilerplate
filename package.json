@@ -4,7 +4,9 @@
   "description": "A boilerplate for an express server with auth in typescript",
   "main": "index.ts",
   "scripts": {
-    "start": "nodemon src/index.ts",
+    "start": "npm run build && node dist/index.js",
+    "dev": "nodemon src/index.ts",
+    "build": "tsc && cp -r src/views dist/views",
     "check": "npm run check:prettier && npm run check:eslint",
     "check:eslint": "eslint src/**/*.ts",
     "check:prettier": "prettier --check src/**/*.ts src/**/*.js",

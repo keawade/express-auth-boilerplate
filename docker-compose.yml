@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:
+  server:
+    image: 'node:12'
+    user: 'node'
+    working_dir: /home/node/app
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - '80:3000'
+    expose:
+      - 80/tcp
+    command: npm start
